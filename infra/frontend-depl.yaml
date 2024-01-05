@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yt-frontend
+spec:
+  selector:
+    matchLabels:
+      app: yt-frontend
+  template:
+    metadata:
+      labels:
+        app: yt-frontend
+    spec:
+      containers:
+      - name: yt-frontend
+        image: imrishav/yt-frontend
+        ports:
+        - containerPort: 3000

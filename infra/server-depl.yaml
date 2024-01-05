@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yt-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: yt-server
+  template:
+    metadata:
+      labels:
+        app: yt-server
+    spec:
+      containers:
+      - name: yt-server
+        image: imrishav/yt-server
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
